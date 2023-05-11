@@ -5,6 +5,7 @@ import {kindnessrouter} from './kindness';
 import {articlesrouter} from './articlesrouter';
 import { feriarouter } from './feriarouter';
 import { casorouter } from './casorouter';
+import { casorouter3 } from './casorouter3';
 
 class Routes {
 
@@ -30,10 +31,12 @@ class Routes {
         this.express.use('/articles', articlesrouter);
         this.express.use('/feria', feriarouter);
         this.express.use('/caso', casorouter);
+        this.express.use('/caso3', casorouter3);
         this.logger.info("Kindness route loaded");
         this.logger.info("articles route loaded");
         this.logger.info("feria route loaded");
         this.logger.info("caso route loaded");
+        this.logger.info("caso3 route loaded");
     }
 }
 
