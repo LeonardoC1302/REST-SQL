@@ -26,13 +26,17 @@ export class data_caso {
         // via singleton, accediendo a un solo pool tengo una conexiona la base de datos
     }
 
-    public getProducersByFilter(filter:string) : Promise<any>
-    {      
+    public getProducersByFilter(filter:string) : Promise<any> {
         return sql.connect(sqlConfig).then((pool:any) => {
             return pool.request()
                 .input('filter', sql.VarChar(50), filter)
                 .execute('getFilteredProducers')
-        })
+                .then((result:any) => {
+                    console.log(result)
+                    return result.recordset;
+                });
+        });
     }
+    
 
 }
