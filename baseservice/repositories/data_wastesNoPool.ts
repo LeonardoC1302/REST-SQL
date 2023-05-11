@@ -28,12 +28,11 @@ export class data_wastesNoPool {
     }
 
     public async getWasteMovementByQuantityNoPool(filter: number): Promise<any> {
-        const connection = new sql.ConnectionPool(sqlConfig);
+        const connection = await sql.connect(sqlConfig);
         try {
-            await connection.connect();
-            const result = await connection.request()
-            .input('filter', sql.Int, filter)
-            .execute('GetWasteMovementsByQuantity');
+            const request = new sql.Request(connection);
+            request.input('filter', sql.Int, filter);
+            const result = await request.execute('GetWasteMovementsByQuantity');
             return result.recordset;
         } catch (error) {
             console.error(error);
@@ -41,7 +40,9 @@ export class data_wastesNoPool {
         } finally {
             await connection.close();
         }
-        }
+    }
+
+
         
 
 }

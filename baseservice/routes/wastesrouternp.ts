@@ -14,7 +14,6 @@ app.post("/getfilteredwastes", (req, res,next) => {
         log.error(err);
         return "{msg: \"error\"}";
     });
-
 });
 
 export { app as wastesrouternp };
