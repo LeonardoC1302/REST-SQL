@@ -32,7 +32,7 @@ export class data_wastesNoPool {
         try {
             await connection.connect();
             const result = await connection.request()
-            .input('filter', sql.int, filter)
+            .input('filter', sql.Int, filter)
             .execute('GetWasteMovementsByQuantity');
             return result.recordset;
         } catch (error) {

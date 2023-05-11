@@ -26,9 +26,9 @@ export class WastesControllerNP {
         return this.instance;
     }
 
-    public getFilteredWastes(filter: string) : Promise<any> 
+    public getFilteredWastes(filter: number) : Promise<any> 
     {
-        const casodata3 = new data_wastesNoPool();
-        return casodata3.getWasteMovementByQuantityNoPool(filter);
+        const wastesdata = new data_wastesNoPool();
+        return wastesdata.getWasteMovementByQuantityNoPool(filter);
     }
 }

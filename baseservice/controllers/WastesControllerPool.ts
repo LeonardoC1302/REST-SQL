@@ -28,7 +28,7 @@ export class WastesControllerPool {
 
     public getFilteredWastes(filter: number) : Promise<any> 
     {
-        const casodata = new data_wastesPool();
-        return casodata.getWasteMovementByQuantity(filter);
+        const wastesdata = new data_wastesPool();
+        return wastesdata.getWasteMovementByQuantity(filter);
     }
 }
