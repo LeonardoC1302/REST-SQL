@@ -28,7 +28,6 @@ export class data_caso {
 
     public getProducersByFilter(filter:string) : Promise<any>
     {      
-        // llamadas a SP, driver de base de datos, ORM
         return sql.connect(sqlConfig).then((pool:any) => {
             return pool.request()
                 .input('filter', sql.VarChar(50), filter)
