@@ -41,8 +41,4 @@ export class data_wastesNoPool {
             await connection.close();
         }
     }
-
-
-        
-
 }
