@@ -2,8 +2,10 @@ import { Logger } from '../common'
 const sql = require('mssql');
 
 const sqlConfig = {
-    user: "root",
-    password: "123456",
+    //user: "root",
+    //password: "123456",
+    user: "frank",
+    password: "frank",
     database: "caso3",
     server: "localhost",
     pool: {
@@ -13,7 +15,9 @@ const sqlConfig = {
     },
     options: {
     encrypt: true, 
-    trustServerCertificate: true 
+    trustServerCertificate: true,
+    requestTimeout: 60000 // Increase the timeout value to 60 seconds
+
     }
 }
 
