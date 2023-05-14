@@ -1,5 +1,6 @@
 # How to use the application
 - Install all dependencies with 'npm i'
+- npm audit fix --force (to fix some npm i problems)
 - use 'npm run start' to start the app
 - Using postman, send requests to check the status
     - http://localhost:5000/api/kind/saludos (GET)
